@@ -1,6 +1,8 @@
+// userModel.js
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
+const sequelize = require('../config/db');  // Import koneksi dari db.js
 
+// Mendefinisikan model User
 const User = sequelize.define('User', {
   name: {
     type: DataTypes.STRING,
@@ -20,8 +22,8 @@ const User = sequelize.define('User', {
   timestamps: true,    // Menyimpan createdAt dan updatedAt
 });
 
-// Menginisialisasi database jika model belum ada
-sequelize.sync()
+// Membuat tabel jika belum ada dan mensinkronkan dengan database
+sequelize.sync({ force: false })  // `force: false` untuk tidak menghapus data yang ada
   .then(() => console.log('Database & tables synced'))
   .catch((err) => console.error('Error syncing database:', err));
 
