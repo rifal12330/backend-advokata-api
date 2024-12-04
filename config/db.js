@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize');
 
 // Membuat koneksi dengan Cloud SQL menggunakan Unix socket
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: `/cloudsql/${process.env.CLOUD_SQL_CONNECTION_NAME}`, // Menggunakan Cloud SQL connection name
+  host: `${process.env.CLOUD_SQL_CONNECTION_NAME}`, // Menggunakan Cloud SQL connection name
   dialect: 'mysql', // Database yang digunakan
   logging: false,  // Nonaktifkan logging SQL jika tidak dibutuhkan
 });
