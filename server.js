@@ -1,3 +1,4 @@
+// index.js
 const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
@@ -9,14 +10,8 @@ dotenv.config();
 
 const app = express();
 
-// Middleware untuk melayani file statis (termasuk favicon.ico)
-app.use(express.static(path.join(__dirname, 'public')));
-
 // Middleware untuk parsing JSON body
 app.use(bodyParser.json());
-
-// Menambahkan rute favicon.ico
-app.get('/favicon.ico', (req, res) => res.sendFile(path.join(__dirname, 'public', 'favicon.ico')));
 
 // Rute untuk otentikasi
 app.use('/api/auth', authRoutes);
@@ -35,7 +30,7 @@ app.use((err, req, res, next) => {
 // Menentukan port untuk server
 const PORT = process.env.PORT || 8080;
 
-// Menjalankan server dan menangani error startup
+// Menjalankan server
 app.listen(PORT, (err) => {
   if (err) {
     console.error('Failed to start server:', err);
