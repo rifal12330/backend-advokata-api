@@ -1,7 +1,9 @@
 runtime: nodejs20
 env_variables:
-  DB_HOST: 34.101.42.91
   DB_USER: rifal
   DB_PASSWORD: 1933
   DB_NAME: advokataDB
-  JWT_SECRET: 51cfbe1c2faf7b18f9f6eb7a05e9d0cef14f5935cbfd7b08b2e86e64fbc0e1b9
+  JWT_SECRET: 2b2c50aefcbfb4fe46d9648dd6a7037d72b776d8689a015663189465cbe34727  # Ganti dengan nilai JWT secret yang sesuai
+  CLOUD_SQL_CONNECTION_NAME: artful-mystery-441112-u2:asia-southeast2:advokata-db
+beta_settings:
+  cloud_sql_instances: artful-mystery-441112-u2:asia-southeast2:advokata-db
