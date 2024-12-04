@@ -5,7 +5,7 @@ const connection = mysql.createConnection({
   user: process.env.DB_USER,                  // Database user
   password: process.env.DB_PASSWORD,          // Database password
   database: process.env.DB_NAME,              // Database name
-  socketPath: `/cloudsql/${process.env.CLOUD_SQL_CONNECTION_NAME}`, // Cloud SQL connection path
+  socketPath: `/cloudsql/${process.env.CLOUD_SQL_CONNECTION_NAME}` // Cloud SQL connection path
 });
 
 // Memastikan koneksi berhasil
