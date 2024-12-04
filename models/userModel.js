@@ -9,15 +9,20 @@ const User = sequelize.define('User', {
   email: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true,
+    unique: true,  // Pastikan email bersifat unik
   },
   password: {
     type: DataTypes.STRING,
     allowNull: false,
   },
 }, {
-  tableName: 'users',
-  timestamps: true, // Automatically adds createdAt and updatedAt fields
+  tableName: 'users',  // Nama tabel pada database
+  timestamps: true,    // Menyimpan createdAt dan updatedAt
 });
+
+// Menginisialisasi database jika model belum ada
+sequelize.sync()
+  .then(() => console.log('Database & tables synced'))
+  .catch((err) => console.error('Error syncing database:', err));
 
 module.exports = User;
