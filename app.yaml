@@ -1,3 +1,5 @@
+runtime: nodejs20  # Use the appropriate Node.js version
+
 env_variables:
   DB_USER: rifal
   DB_PASSWORD: 1933
