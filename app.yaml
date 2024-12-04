@@ -2,4 +2,4 @@ env_variables:
   DB_USER: rifal
   DB_PASSWORD: 1933
   DB_NAME: advokataDB
-  DB_HOST: /cloudsql/artful-mystery-441112-u2:asia-southeast2:advokata-db
+  CLOUD_SQL_CONNECTION_NAME: artful-mystery-441112:u2:asia-southeast2:advokata-db
